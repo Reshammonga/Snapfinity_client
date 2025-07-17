@@ -17,7 +17,7 @@ function UserList() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/auth/all', {
+        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/auth/all`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setUsers(res.data);
@@ -36,7 +36,7 @@ function UserList() {
   const handleFollow = async (targetId) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/users/${targetId}/follow`,
+        `${process.env.REACT_APP_API_URL}/api/users/${targetId}/follow`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );

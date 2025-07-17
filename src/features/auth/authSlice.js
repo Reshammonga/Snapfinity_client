@@ -13,7 +13,7 @@ export const fetchCurrentUser = createAsyncThunk(
   async (_, { getState, rejectWithValue }) => {
     const token = getState().auth.token;
     try {
-      const res = await axios.get('http://localhost:5000/api/auth/me', {
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/auth/me`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       return res.data.user;
@@ -26,7 +26,7 @@ export const fetchCurrentUser = createAsyncThunk(
 export const loginUser = createAsyncThunk(
   'auth/login',
   async (credentials) => {
-    const response = await axios.post('http://localhost:5000/api/auth/login', credentials);
+    const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/auth/login`, credentials);
     return response.data;
   }
 );

@@ -14,7 +14,7 @@ const reduxUser = useSelector(state=>state.auth.user);
 useEffect(() => {
  const fetchProfile=async()=>{
   try {
-    const res = await axios.get("http://localhost:5000/api/auth/me",{
+    const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/auth/me`,{
       headers:{
         Authorization : `Bearer ${token}`
       }
@@ -31,7 +31,7 @@ useEffect(() => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/auth/me", {
+        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/auth/me`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setProfile(res.data);
@@ -58,10 +58,10 @@ useEffect(() => {
     const confirmDelete= window.confirm("Do you really want to delete this post?");
     if(!confirmDelete) return;
     try{
-      await axios.delete(`http://localhost:5000/api/posts/${postId}`,{
+      await axios.delete(`${process.env.REACT_APP_API_URL}/api/posts/${postId}`,{
         headers:{Authorization:`Bearer ${token}`},
       });
-      const res=await axios.get("http://localhost:5000/api/auth/me",{
+      const res=await axios.get(`${process.env.REACT_APP_API_URL}/api/auth/me`,{
               headers: { Authorization: `Bearer ${token}` },
       });
       setProfile(res.data);

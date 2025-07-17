@@ -12,7 +12,7 @@ function UserProfile() {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/users/${id}`, {
+        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/users/${id}`, {
           headers: { Authorization: token },
         });
         setProfileData(res.data);

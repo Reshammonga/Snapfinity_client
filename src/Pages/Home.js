@@ -19,7 +19,7 @@ function Home() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/posts/all', {
+        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/posts/all`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (Array.isArray(res.data)) {
@@ -39,10 +39,10 @@ function Home() {
 
   const handleLike = async (postId) => {
     try {
-      await axios.put(`http://localhost:5000/api/posts/${postId}/like`, {}, {
+      await axios.put(`${process.env.REACT_APP_API_URL}/api/posts/${postId}/like`, {}, {
         headers: { Authorization: `Bearer ${token}` },
       });
-      const res = await axios.get('http://localhost:5000/api/posts/all', {
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/posts/all`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setPosts(res.data);
@@ -56,10 +56,10 @@ function Home() {
     const text = comments[postId];
     if (!text) return;
     try {
-      await axios.post(`http://localhost:5000/api/posts/${postId}/comment`, { text }, {
+      await axios.post(`${process.env.REACT_APP_API_URL}/api/posts/${postId}/comment`, { text }, {
         headers: { Authorization: `Bearer ${token}` },
       });
-      const res = await axios.get('http://localhost:5000/api/posts/all', {
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/posts/all`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setPosts(res.data);
