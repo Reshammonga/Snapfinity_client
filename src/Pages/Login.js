@@ -59,16 +59,16 @@ const Login = () => {
             <p className="font-sans text-2xl font-bold text-center text-amber-800">
               Access Account
             </p>
-
+          <label>Enter Your Email Address</label>
             <input
               className="border-2 border-black-700 p-2 rounded focus:outline-none focus:border-brown-400"
               name="email"
               value={form.email}
               autoComplete="current-email"
               onChange={handleChange}
-              placeholder="Enter your Eamil"
+              placeholder="Enter your Email"
             ></input>
-
+                <label>Enter Your password</label>
             <input
               className="border-2 border-black-700 p-2 rounded focus:outline-none focus:border-brown-400"
               name="password"
