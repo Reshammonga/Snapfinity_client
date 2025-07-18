@@ -41,6 +41,13 @@ const Login = () => {
     {`${alert.type} : ${alert.msg}`}
   </div>
 )}
+<header className="p-10 text-center flex flex-row justify-between">
+<img src="/Pics/nobg1.png" className="hidden sm:flex flex-col animate-pulse" alt="sticker"></img>
+<div className="flex flex-col"> <h2 className="text-4xl font-extrabold text-amber-100 mb-4">Snapfinity</h2>
+  <p className="text-amber-50 text-lg max-w-2xl mx-auto "> Capture life as it happens and share your moments with the world. Snapfinity brings your stories to life with a smooth, engaging photo-sharing experience. Whether you're a traveler, foodie, or trendsetter — Snapfinity lets you post, follow, and connect endlessly.</p></div>
+ <img src="/Pics/nobg2.png" className=" hidden sm:flex flex-col animate-pulse  " alt="sticker"></img>
+ 
+</header>
       <div className="flex flex-col sm:flex-row ">
         {/* Left column */}
         <div className='"w-full sm:basis-1/3 sm:w-[50%] flex items-center justify-center mt-5'>
@@ -59,7 +66,7 @@ const Login = () => {
             <p className="font-sans text-2xl font-bold text-center text-amber-800">
               Access Account
             </p>
-          <label>Enter Your Email Address</label>
+          
             <input
               className="border-2 border-black-700 p-2 rounded focus:outline-none focus:border-brown-400"
               name="email"
@@ -68,7 +75,7 @@ const Login = () => {
               onChange={handleChange}
               placeholder="Enter your Email"
             ></input>
-                <label>Enter Your password</label>
+                
             <input
               className="border-2 border-black-700 p-2 rounded focus:outline-none focus:border-brown-400"
               name="password"
@@ -162,7 +169,7 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <div className=" flex items-center justify-center p-4">
+      <div className=" flex items-center justify-center p-4 animate-bounce">
         <p className="italic">
           "Snapfinity transformed the way I connect with my friends."
         </p>
